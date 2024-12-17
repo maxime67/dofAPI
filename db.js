@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/dof', {
+        await mongoose.connect(process.env.MONGOURL + '/dof', {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
