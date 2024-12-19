@@ -1,0 +1,15 @@
+storage:
+  dbPath: /var/lib/mongo
+  journal:
+    enabled: true
+
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
+
+net:
+  bindIp: 127.0.0.1
+  port: 27017
+processManagement:
+  timeZoneInfo: /usr/share/zoneinfo

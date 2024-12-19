@@ -4,15 +4,6 @@
     dest: "{{ script_path }}"
     mode: '0755'
 
-- name: Execute cleanup script
-  command: "{{ script_path }}"
-  register: cleanup_output
-
-- name: Delete cleanup file
-  file:
-    path: "{{ script_path }}"
-    state: absent
-
 - name: Stop running services
   systemd:
     name: "{{ item }}"
@@ -54,6 +45,10 @@
     state: absent
   become: false
 
+- name: Execute cleanup script
+  command: "{{ script_path }}"
+  register: cleanup_output
+
 - name: Get disk usage after cleanup
   shell: df -h
   register: disk_usage
@@ -62,3 +57,8 @@
 - name: Display disk usage
   debug:
     var: disk_usage.stdout_lines
+
+- name: Delete cleanup file
+  file:
+    path: "{{ script_path }}"
+    state: absent

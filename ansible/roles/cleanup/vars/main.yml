@@ -6,8 +6,10 @@ log_paths:
   - /var/log/*.gz
 services_to_stop:
   - apache2
+  - mongodb
 packages_to_remove:
   - nodejs
   - npm
   - apache2
+  - mongodb
 script_path: '/tmp/cleanup.sh'

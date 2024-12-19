@@ -18,9 +18,6 @@ check_root() {
 
 # Main cleanup function
 cleanup_system() {
-    log_message "Stopping services..."
-    systemctl stop docker nginx 2>/dev/null || true
-
     log_message "Cleaning package manager cache..."
     if command -v apt-get &> /dev/null; then
         apt-get clean
