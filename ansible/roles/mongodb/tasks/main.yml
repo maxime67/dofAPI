@@ -4,8 +4,8 @@
     name: mongodb-org
     state: present
 
-- name: Configure MongoDB to listen only on localhost
-  ansible.builtin.template:
+- name: Create environment files
+  template:
     src: mongod.conf.j2
     dest: /etc/mongod.conf
     owner: mongod
