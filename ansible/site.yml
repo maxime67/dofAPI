@@ -12,5 +12,4 @@
   roles:
     - cleanup
     - mongodb
-    - apache
     - nodejs
