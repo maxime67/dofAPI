@@ -11,6 +11,6 @@
 
   roles:
     - cleanup
-    - monogdb
+    - mongogdb
     - apache
     - nodejs
