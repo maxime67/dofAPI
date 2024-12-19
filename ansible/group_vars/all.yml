@@ -1,0 +1,9 @@
+---
+app_name: dofApi
+app_user: www-data
+app_group: www-data
+app_root: /home/{{ app_name }}
+nodejs_version: 20
+repository_url: https://github.com/maxime67/dofApi
+git_branch: master
+database_url: http://localhost:27017
