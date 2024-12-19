@@ -1,6 +1,6 @@
 ---
 - name: Install MongoDB
-  ansible.builtin.yum:
+  apt:
     name: mongodb-org
     state: present
 
