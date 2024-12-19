@@ -4,6 +4,12 @@
     name: mongodb-org
     state: present
 
+- name: Ensure mongod user exists
+  user:
+    name: mongod
+    state: present
+    system: yes
+
 - name: Create environment files
   template:
     src: mongod.conf.j2
