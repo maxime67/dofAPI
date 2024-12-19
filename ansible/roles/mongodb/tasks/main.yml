@@ -1,3 +1,4 @@
+---
 - name: Install MongoDB
   ansible.builtin.yum:
     name: mongodb-org
