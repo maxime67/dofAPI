@@ -20,8 +20,8 @@ pipeline {
             steps {
                 sh """
                 set -x
-                     ansible-playbook -i ${ANSIBLE_INVENTORY} ${ANSIBLE_SITE_YML_PATH} \
-                     -v
+                     ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ${ANSIBLE_INVENTORY} ${ANSIBLE_SITE_YML_PATH} \
+                     -vvvv
                 """
             }
         }
