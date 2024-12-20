@@ -11,5 +11,5 @@ packages_to_remove:
   - nodejs
   - npm
   - apache2
-  - mongodb
+  - mongodb-org
 script_path: '/tmp/cleanup.sh'
