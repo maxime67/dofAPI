@@ -19,6 +19,12 @@
     mode: '0644'
   notify: Restart MongoDB
 
+- name: Create database
+  mongodb_db:
+    login_host: localhost
+    database: dof
+    state: present
+
 - name: Start and enable MongoDB service
   ansible.builtin.service:
     name: mongod
