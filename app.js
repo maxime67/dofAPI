@@ -8,10 +8,7 @@ var dotenv = require('dotenv')
 const connectDB = require("./db");
 
 var app = express();
-app.use(cors({
-    origin: '*', // Or specify exact origins like 'http://localhost:3000'
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
-}));
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
