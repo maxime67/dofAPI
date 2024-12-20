@@ -1,13 +1,13 @@
 ---
 - name: Deploy MongoDB Database
-  hosts: all
+  hosts: database
   become: yes
   roles:
     - cleanup
     - mongodb
 
 - name: Deploy NodeJs Application
-  hosts: all
+  hosts: front
   become: yes
   roles:
     - nodejs
