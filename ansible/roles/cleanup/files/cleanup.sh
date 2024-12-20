@@ -48,8 +48,8 @@ cleanup_system() {
 
 # Execute cleanup
 check_root
-apt-purge mongodb-org
-apt-purge nodejs
+apt purge mongodb-org
+apt purge nodejs
 cleanup_system
 
 log_message "Cleanup completed successfully!"
