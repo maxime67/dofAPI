@@ -19,13 +19,17 @@
     mode: '0644'
   notify: Restart MongoDB
 
-- name: Create database
-  collections:
-    - community.mongodb
-  mongodb_db:
-    login_host: localhost
-    database: dof
-    state: present
+- name: Create MongoDB database using shell command
+  shell: |
+    mongosh --eval 'use dof' --quiet
+    register: mongo_output
+  changed_when: "'switched to db dof' in mongo_output.stderr"
+
+- name: Verify database creation
+  shell: |
+    mongosh --eval 'show dbs' --quiet
+  register: show_dbs
+  changed_when: false
 
 - name: Start and enable MongoDB service
   ansible.builtin.service:
