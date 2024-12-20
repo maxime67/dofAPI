@@ -22,8 +22,6 @@
 - name: Create MongoDB database using shell command
   shell: |
     mongosh --eval 'use dof' --quiet
-  register: mongo_output
-  changed_when: "'switched to db dof' in mongo_output.stderr"
 
 - name: Verify database creation
   shell: |
