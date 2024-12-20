@@ -6,4 +6,4 @@ app_root: /home/{{ app_name }}
 nodejs_version: 20
 repository_url: https://github.com/maxime67/dofApi
 git_branch: master
-database_url: mongodb://localhost:27017/
+database_url: mongodb://localhost:27017
