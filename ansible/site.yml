@@ -1,13 +1,13 @@
 ---
-- name: Deploy VueJS Application
+- name: Deploy NodeJs Application
   hosts: all
   become: yes
-  pre_tasks:
-    - name: Update apt cache
-      apt:
-        update_cache: yes
-      when: ansible_os_family == "Debian"
   roles:
     - cleanup
-    - mongodb
     - nodejs
+
+- name: Deploy MongoDB Database
+  hosts: all
+  become: yes
+  roles:
+    - mongodb
