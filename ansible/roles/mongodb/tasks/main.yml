@@ -20,6 +20,8 @@
   notify: Restart MongoDB
 
 - name: Create database
+  collections:
+    - community.mongodb
   mongodb_db:
     login_host: localhost
     database: dof
